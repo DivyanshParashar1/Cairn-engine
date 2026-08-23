@@ -1,0 +1,33 @@
+# The working apparatus — rules, phase plans, gates, ADRs, session logs.
+# Private to the build; never ships to the public repo. See learning/README.md.
+learning/
+AGENTS.md
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Test / coverage
+coverage/
+.vitest/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
