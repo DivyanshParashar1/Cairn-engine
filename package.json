@@ -9,7 +9,11 @@
   "scripts": {
     "build": "pnpm -r run build",
     "lint": "eslint .",
-    "typecheck": "pnpm -r --workspace-concurrency=1 exec tsc --noEmit"
+    "typecheck": "pnpm -r --workspace-concurrency=1 exec tsc --noEmit",
+    "db:up": "docker compose up -d --wait",
+    "db:down": "docker compose down",
+    "db:reset": "docker compose down -v && docker compose up -d --wait",
+    "db:psql": "docker compose exec postgres psql -U cairn -d cairn"
   },
   "license": "ISC",
   "packageManager": "pnpm@10.33.0",

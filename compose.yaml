@@ -1,0 +1,22 @@
+name: cairn
+
+services:
+  postgres:
+    image: postgres:16.15
+    environment: 
+      POSTGRES_USER: cairn
+      POSTGRES_PASSWORD: cairn
+      POSTGRES_DB: cairn
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cairn -d cairn"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 30s
+    restart: unless-stopped
+volumes:
+  pgdata:

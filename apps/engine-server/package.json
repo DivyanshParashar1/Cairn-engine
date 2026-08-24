@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
   "license": "ISC",
   "dependencies": {
     "@cairn/engine": "workspace:*"
