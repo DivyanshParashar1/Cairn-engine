@@ -1,0 +1,14 @@
+{
+  "name": "@cairn/demo-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {},
+  "license": "ISC",
+  "dependencies": {
+    "@cairn/engine": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1"
+  }
+}
