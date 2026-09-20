@@ -4,7 +4,8 @@
   "type": "module",
   "license": "ISC",
   "files": [
-    "dist"
+    "dist",
+    "migrations"
   ],
   "exports": {
     ".": {
@@ -16,6 +17,10 @@
     "build": "tsc -p tsconfig.json"
   },
   "devDependencies": {
-    "@types/node": "^22.20.1"
+    "@types/node": "^22.20.1",
+    "@types/pg": "^8.23.1"
+  },
+  "dependencies": {
+    "pg": "^8.23.0"
   }
 }
