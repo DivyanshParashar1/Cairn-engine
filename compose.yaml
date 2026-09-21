@@ -3,7 +3,7 @@ name: cairn
 services:
   postgres:
     image: postgres:16.15
-    environment: 
+    environment:
       POSTGRES_USER: cairn
       POSTGRES_PASSWORD: cairn
       POSTGRES_DB: cairn
