@@ -20,7 +20,7 @@ export async function migrate({ pool }: { pool: Pool }): Promise<void> {
       await client.query(
         `CREATE TABLE IF NOT EXISTS schema_migrations (version INTEGER PRIMARY KEY, name TEXT NOT NULL, applied_at TIMESTAMPTZ NOT NULL DEFAULT NOW())`,
       );
-      const { rows } = await client.query(
+      const { rows } = await client.query<{ v: number }>(
         `SELECT COALESCE(MAX(version), 0) AS v FROM schema_migrations`,
       );
       const currentVersion = rows[0]?.v ?? 0;

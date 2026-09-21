@@ -23,7 +23,7 @@ describe("test database harness", () => {
     const insert = await db.pool.query<{ id: string }>(
       "INSERT INTO workflow_runs (workflow_name) VALUES ('probe') RETURNING id",
     );
-    const runId = insert.rows[0]!.id;
+    const runId = insert.rows[0].id;
 
     await db.pool.query(
       "INSERT INTO journal_entries (run_id, ordinal, entry_type, step_name) VALUES ($1, 1, 'step', 'probe-step')",
@@ -34,6 +34,6 @@ describe("test database harness", () => {
       "SELECT COUNT(*)::int AS count FROM journal_entries WHERE run_id = $1",
       [runId],
     );
-    expect(count.rows[0]!.count).toBe(1);
+    expect(count.rows[0].count).toBe(1);
   });
 });
