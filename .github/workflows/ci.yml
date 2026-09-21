@@ -24,6 +24,8 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      - run: pnpm build
+
       - name: Enforce ADR-007 (engine imports nothing from apps/)
         run: |
           if grep -RE "from ['\"](\.\./)+apps/" packages/engine/src; then
